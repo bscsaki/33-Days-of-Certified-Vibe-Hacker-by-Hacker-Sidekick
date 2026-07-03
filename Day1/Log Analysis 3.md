@@ -69,12 +69,11 @@ Open the 3.log file and look through the lines. You will notice commands that lo
 | :---- | :---- |
 | type=PROCTITLE | This means **Proc**ess **Title** and is the record type that gets the entire command line  that triggered this event into a string. This is used as a redundancy measure. |
 | 64640069663D2F6465762F7A65726F0062733D3100636F756E743D31 | These hex pairs are the 4 arguments encoded into one hexadecimal sequence. This is how linux stores the argv (mentioned before) in memory |
-| Using a hex decoder on the sequence it outputs the same result as the same arguments from the EXECVE record and it’s a way to confirm that our reconstruction is accurate. |  |
-| ![decoded](images/decoded.png) |  |
+| ![decoded](images/decoded.png) | Using a hex decoder on the sequence it outputs the same result as the same arguments from the EXECVE record and it’s a way to confirm that our reconstruction is accurate. |
 
 **Summary:**
 
- In this challenge of Certified Vibe Hacker by Hacker Sidekick we had to work through a linux audit log and understand what this single event was doing. 
+In this challenge of [Certified Vibe Hacker Workshop](https://certifiedvibehacker.com/) by [Hacker SideKick](https://hackersidekick.com/) we had to work through a linux audit log and understand what this single event was doing. 
 
 By looking though all of the different event record types we learnt more on how the linux OS operates, and saw a building block that can be used to scale an attack.
 
