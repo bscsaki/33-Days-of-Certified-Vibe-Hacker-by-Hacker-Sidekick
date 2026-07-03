@@ -13,7 +13,7 @@ TO BE CLEAR I am not against AI. I support AI technology and want to explore bet
 
 **My CTF Journey**  
 I have participated in a few CTFs and AI has taken some of the joy of trying or having the mere illusion or possibility that you might win on your own merit. Knowing that the majority of the contestants are using AI, and so am I, only adds more pressure and makes the clock go by faster. As someone who knows little about it I have been using AI against my own learning.   
-You see when you are competing against time and the powerful open claw(fact check is this possible) agents that some genius with real skills and grit deployed… is solving all the challenges in parallel you are already defeated and inevitably turn into a slower copycat with a scrappier quality. Unfortunately you don’t learn just pasting logs or files into an AI and getting a solution back does not mean you actually know how to solve that kind of problem. The real question is simple. Could you solve it again, alone, without that help? In a time crunch the honest answer is no  because in that moment finding the flag matters more than learning how you got there. 
+You see, when you are competing against time and the powerful OpenClaw agents that some genius with real skills and grit deployed… is solving all the challenges in parallel you are already defeated and inevitably turn into a slower copycat of scrappier quality. Unfortunately, just pasting logs or files into an AI and getting a solution back does not mean you actually know how to solve that kind of problem. The test is simple; could you solve it again, alone, without that help? In a time crunch the honest answer is no because during the competition finding the flag matters more than learning or understanding how you got there. 
 
 **The Rules**  
 So these 33 days are my effort to enjoy the journey and not the destination of CTFs. I want to slow down and dive into each challenge to understand what is going on behind the scenes. Without a clock on top running or an automated script outpacing me in the background.   
@@ -29,7 +29,7 @@ All rights to the Certified Vibe Hacker Workshop belong to Hacker SideKick. What
 
 Everything written in these posts is written by me, in my own words, without AI generating or drafting the text.
 
-Any comments or concerns let me know.
+Any comments or concerns let me know at sofia@sofiabatala.com and check out my [Portfolio...](https://www.sofiabatala.com)
 
 **What’s Next?**
 
