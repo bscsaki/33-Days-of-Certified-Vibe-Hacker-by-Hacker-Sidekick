@@ -5,6 +5,7 @@
 This is an audit log file, so let's analyze its contents.
 
 Open the 3.log file and look through the lines. You will notice commands that look like linux bash.
+![line1](images/line1.png)
 
 | type=SYSCALL msg=audit(1604996384.965:93777): arch=c000003e syscall=59 success=yes exit=0 a0=558e25052c70 a1=558e251641a0 a2=558e25160800 a3=1b6 items=2 ppid=29002 pid=2168 auid=1000 uid=1000 gid=1000 euid=1000 suid=1000 fsuid=1000 egid=1000 sgid=1000 fsgid=1000 tty=pts0 ses=104 comm="dd" exe="/bin/dd" key=(null) |  |
 | :---- | :---- |
@@ -20,6 +21,7 @@ Open the 3.log file and look through the lines. You will notice commands that lo
 | tty=pts0 | **Tty**  or  **teletypewriter** is the general term for any terminal device on Unix. In the past it was used to be hardware that sent typed text over a wire **pts0** or  **pseudo terminal slave** is the modern virtual version of the teletypewriter. It is automatically created by the kernel when you  log in remotely ie SSH or open a terminal emulator window. The number **0** tracks the order of creation in each session |
 | comm=”dd” | The **command** name as how kernel saved it |
 | exe=”/bin/dd” | This is the full path to the binary file that got **executed** |
+![line2](images/line2.png)
 
 | type=EXECVE msg=audit(1604996384.965:93777): argc=4 a0="dd" a1="if=/dev/zero" a2="bs=1" a3="count=1" |  |
 | :---- | :---- |
@@ -29,11 +31,13 @@ Open the 3.log file and look through the lines. You will notice commands that lo
 | a1=”if=/dev/zero” | **if** means input file (**of** means output file not shown here)  **dev/zero** is 1\. a character and 2\. a pseudo device   A **character device** transfers data one **character** at a time. A **Character special file** acts as the interface to character devices. So the driver communicates with a **character device** by sending **single characters** as data to the **character special file**. (VS. There are also block special files that act as the interface to block devices, the driver sends block of data)  It’s a pseudo device, meaning that there is not any real hardware. It behaves like a device the system can read/write. With **dev/zero** being 1 and 2, a device with no hardware that transfers a single character of data per access, this file returns an infinite stream of null characters. One at a time. The **dev** directory consists of device files, which are abstractions of standard devices that applications interact with via I/O system calls (sending blocks or characters of data…) |
 | a2=”bs=1” | Sets the block size to 1 byte, so when it runs it can read/write one byte at a time |
 | a3=”count=1” | Tells dd to perform exactly one block operation. So per execution bs\*count \=1 aka only 1 byte per execution |
+![line3](images/line3.png)
 
 | type=CWD msg=audit(1604996384.965:93777): cwd="/home/wardog" |  |
 | :---- | :---- |
 | type=CWD | **C**urrent **W**orking **D**irectory. When you ask code to read/write it automatically looks for the cwd  |
 | cwd=”/home/wardog” | This is the user’s location in the system when they run the command, but the file was still executed in its own location /bin/add |
+![line4](images/line4.png)
 
 | type=PATH msg=audit(1604996384.965:93777): item=0 name="/bin/dd" inode=20 dev=08:01 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap\_fp=0 cap\_fi=0 cap\_fe=0 cap\_fver=0 cap\_frootid=0 |  |
 | :---- | :---- |
@@ -43,12 +47,14 @@ Open the 3.log file and look through the lines. You will notice commands that lo
 | inode=20 | Every file on linux has an **in**dex **node** a unique ID for file metadata. The metadata stored is file size, owner, permissions, timestamps, pointers to disk blocks but no file name. The filesystem ID combines with the inode and creates a unique identification label. |
 | dev=08:01 | This shows the storage device location of the file, **major:minor** is the format. So this is the location virtually or physically in the disk of **inode 20** |
 | mode=0100755 | This is the file **type** and **permission bits**. 0100-755. The first part 0100 means that it is a regular file (if it was 0400 it would be a directory, or 0200 a character device like /dev/zero) and 755 shows the permissions for the owner, the user group, and everyone else in this order. Each number is a sum of permissions so 4 means read, 2 means write, 1 means execute. The owner is 7 so read, write, execute. The group and everyone else are 5, so read and execute, but not write.  |
+![line5](images/line5.png)
 
 | type=PATH msg=audit(1604996384.965:93777): item=1 name="/lib64/ld-linux-x86-64.so.2" inode=29514 dev=08:01 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap\_fp=0 cap\_fi=0 cap\_fe=0 cap\_fver=0 cap\_frootid=0 |  |
 | :---- | :---- |
 | type=PATH | The other file accessed by the kernel to complete syscall |
 | item=1 | The second PATH  |
 | name="/lib64/ld-linux-x86-64.so.2" | This is the **dynamic linke**r that needs to be loaded before the program can be executed. The binary dd was written to call functions that live inside shared libraries. dd uses library functions instead of having that code built directly into it, and so it cannot run on its own, it needs those libraries linked in at the moment it executes. The loader will locate and load all the library programs, resolve the function addresses between them, and then the binary can execute using them.  Resolving function addresses happens because the shared library functions' location varies depending on what is loaded on memory at the current moment. So the loader literally has to go look for each function, load it, and write the current memory address. |
+![line6](images/line6.png)
 
 | type=PROCTITLE msg=audit(1604996384.965:93777): proctitle=64640069663D2F6465762F7A65726F0062733D3100636F756E743D31  |  |
 | :---- | :---- |
