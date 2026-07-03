@@ -9,7 +9,7 @@ Another reason I have wanted to do this is because I have been and keep hearing 
 Claude was down last week and I am sure a lot of people started panicking and blankly staring at the status page of Anthropic.  
 By a lot of people I am talking about myself, and I wish I was joking. Once we begin to over rely on AI for basic functions, what happens when it is unavailable or less widely accessible? That same day Scott Hanselman was speaking at the Chicago Cloud Computing meetup and was calling out this same thing. One quote stayed with me and that was "Do you know you can use airplane mode when you are not flying? Turn it on and code." My generation is able to 'skip' and press 'play forward x10' on a lot of crucial learning moments and pitfalls that come with experience. A good resource to check out is this [video](https://www.youtube.com/watch?v=HTUh0OO6Kmo) by JetBrains named "What AI does to the minds of novice coders," and there is also real research from credible institutions on the term coined as "[Cognitive Debt](https://arxiv.org/abs/2506.08872)." 
 
-TO BE CLEAR I am not against AI. I support AI technology and want to explore better, more mindful ways of using AI, closer to how it was meant to be used, less brainrot (:
+TO BE CLEAR I am not against AI. I support AI technology and want to explore better, more mindful ways of using AI, less brainrot (:
 
 **My CTF Journey**  
 I have participated in a few CTFs and AI has taken some of the joy of trying or having the mere illusion or possibility that you might win on your own merit. Knowing that the majority of the contestants are using AI, and so am I, only adds more pressure and makes the clock go by faster. As someone who knows little about it I have been using AI against my own learning.   
