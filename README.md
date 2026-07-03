@@ -54,7 +54,7 @@ I will keep this list updated as the weeks go on.
 | **A** | **LOG ANALYSIS** |  |
 | 1 | Log Analysis 1 |  |
 | 2 | Log Analysis 2 |  |
-| 3 | Log Analysis 3 | [Day 1]([https://certifiedvibehacker.com/](https://github.com/bscsaki/33-Days-of-Certified-Vibe-Hacker-by-Hacker-Sidekick/blob/main/Day1/Log%20Analysis%203.md) |
+| 3 | Log Analysis 3 | [Day 1]([https://certifiedvibehacker.com/](https://github.com/bscsaki/33-Days-of-Certified-Vibe-Hacker-by-Hacker-Sidekick/blob/main/Day1/Log%20Analysis%203.md)) |
 | 4 | Log Analysis 4 |  |
 | 5 | Log Analysis 5 |  |
 | **B** | **WEB APPLICATION PENTEST** |  |
