@@ -12,7 +12,9 @@ The hint given by the CTF is to look for HTML comments inside the base.html temp
 2. Right click and choose view page source or click F12 and look through the \</\>Elements   
 3. Scan the raw HTML by filtering for the comment syntax “\<\!-- “  
 4. You will find the flag inside the comment structure  
-   
+
+
+![template](images/template.png)
 
 So this flag is visible and accessible by everyone who follows the same steps. In addition, because this is the base template, meaning that all other pages are built on its structure, the same flag will exist for multiple other pages and directories.
 
