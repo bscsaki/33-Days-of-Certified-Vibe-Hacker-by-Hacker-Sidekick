@@ -30,7 +30,7 @@ Here is a concrete example from the json log file:
 
 **Summary:**
 
- In this challenge of [Certified Vibe Hacker Workshop](https://certifiedvibehacker.com/) by [Hacker SideKick](https://hackersidekick.com/) we had to analyze a json file from a CloudTrail log and find the user behind the activity. We also 
+ In this challenge of [Certified Vibe Hacker Workshop](https://certifiedvibehacker.com/) by [Hacker SideKick](https://hackersidekick.com/) we had to analyze a json file from a CloudTrail log and find the user behind the activity.  
 
 **Bibliography:**
 
