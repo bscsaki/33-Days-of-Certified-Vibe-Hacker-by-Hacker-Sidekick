@@ -6,7 +6,7 @@ Today’s challenge belongs to the log analysis category, and the objective is t
 
 **Methodology:**
 
-1. Open the 5.json log file given by Certified VibeHacker  
+1. Open the 5.json log file given by the [Certified Vibe Hacker Workshop](https://certifiedvibehacker.com/)  
 2. Filter or look for the field “user”, or “username”  
 3. Look through the logs and find the name of the user
 
@@ -30,7 +30,7 @@ Here is a concrete example from the json log file:
 
 **Summary:**
 
- In this challenge of Certified Vibe Hacker by Hacker Sidekick we had to analyze a json file from a CloudTrail log and find the user behind the activity. We also 
+ In this challenge of [Certified Vibe Hacker Workshop](https://certifiedvibehacker.com/) by [Hacker SideKick](https://hackersidekick.com/) we had to analyze a json file from a CloudTrail log and find the user behind the activity. We also 
 
 **Bibliography:**
 
