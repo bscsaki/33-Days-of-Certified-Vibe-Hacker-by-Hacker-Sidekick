@@ -56,14 +56,14 @@ I will keep this list updated as the weeks go on.
 | 2 | Log Analysis 2 |  |
 | 3 | Log Analysis 3 | [Day 1](https://github.com/bscsaki/33-Days-of-Certified-Vibe-Hacker-by-Hacker-Sidekick/blob/main/Day1/Log%20Analysis%203.md) |
 | 4 | Log Analysis 4 |  |
-| 5 | Log Analysis 5 |  |
+| 5 | Log Analysis 5 |  [Day 3](https://github.com/bscsaki/33-Days-of-Certified-Vibe-Hacker-by-Hacker-Sidekick/blob/main/Day3/Log%20Analysis%205.md)|
 | **B** | **WEB APPLICATION PENTEST** |  |
-| 6 | Hardcoded Secret |  |
+| 6 | Hardcoded Secret | [Day 2](https://github.com/bscsaki/33-Days-of-Certified-Vibe-Hacker-by-Hacker-Sidekick/blob/main/Day2/Hardcoded%20Secret.md) |
 | 7 | SQL Injection \- Login Bypass |  |
 | 8 | Path Traversal |  |
 | 9 | MML External Entity (XXE) Injection |  |
-| 10 | Server-Side Request Forgery (SSRF) |  |
-| 11 | Broken Access Control \- Admin Panel |  |
+| 10 | Server-Side Request Forgery (SSRF) | [Day 5](https://github.com/bscsaki/33-Days-of-Certified-Vibe-Hacker-by-Hacker-Sidekick/blob/main/Day5/Server-Side%20Request%20Forgery%20(SSRF).md) |
+| 11 | Broken Access Control \- Admin Panel | [Day 4](https://github.com/bscsaki/33-Days-of-Certified-Vibe-Hacker-by-Hacker-Sidekick/blob/main/Day4/Broken%20Access%20Control%20-%20Admin%20Panel.md) |
 | 12 | Cross-Site Scripting (XSS) \- Stored |  |
 | 13 | Insecure Direct Object Reference (IDOR) |  |
 | 14 | Weak Password Reset |  |
