@@ -8,8 +8,8 @@
 
 1. Fairly simple, plug in the **/api/user?id=1** after the website name and you will get back a json response of the flag and the user info. 
 
-![idoor](images/idoor.png)
-![idoor2](images/idoor2.png)
+![idoor](images/idor.png)
+![idoor2](images/idor2.png)
 
 
 Just like in [yesterday’s](https://medium.com/@bscsaki/day-5-server-side-request-forgery-ssrf-affe57809052?sharedUserId=bscsaki) example the breakdown of the URL looks like this,  
