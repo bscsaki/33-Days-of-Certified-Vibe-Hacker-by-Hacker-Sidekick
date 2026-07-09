@@ -9,15 +9,16 @@ Today’s challenge was really fun and easy… because we are sort of given the 
 1. I started by navigating to the **/proxy** path in order to see what I would get, and you can see that in the image below. This error output let us know that this route exists, we got back a Json error versus a 404 not found result. More specifically the invalid URL is a specific error message coming from a URL parsing library. From that we can infer that in the backend the code takes the user’s input and tries to parse it as a URL. And so when there was nothing following /proxy it threw an error. Another interesting detail, when I looked up this error all the results turned out to be related to python. Turns out it's an exact match for the MissingSchema exception thrown by Python's requests library. That us that the backend is almost certainly using Python, probably with Flask or FastAPI handling the route itself, while the requests library is doing the actual work of fetching whatever URL gets passed in.   
    
 
-![][image1]
+![proxy](images/proxy.png)
 
 - What is a **proxy**? A program/computer used to navigate through different networks of the internet. It acts as the gateway between the users and the internet, intercepts requests and gives back responses. It can also forward requests or modify them. The main two types of proxy servers are: **forward proxy** and a **reverse proxy**. The former takes requests from anywhere the latter handles the requests coming from the internet and forwards them to the servers of an internal network. In this specific challenge the proxy takes the URL path we type and and tries to fetch back the request made.
 
 
 - What is **URL Parsing**? The process of breaking down a URL string into its individual pieces (ie path, query) so that the application can read and validate each part separately. Parsers are used to validate the user’s URL to prevent open redirects or **server side request forgery SSRF** like today’s task.  
-2. So a **SSRF** attack takes the URL from the user and fetches it to the server and since there is improper URL parsing one is able to get to where the URL points to. So I then took the rest of the clues from the challenge description **/app/data/ssrf\_flag.txt  and** read the file via **file://** protocol and put it all together. Online I found a guide showing this example:![][image2]  
+2. So a **SSRF** attack takes the URL from the user and fetches it to the server and since there is improper URL parsing one is able to get to where the URL points to. So I then took the rest of the clues from the challenge description **/app/data/ssrf\_flag.txt  and** read the file via **file://** protocol and put it all together. Online I found a guide showing this example:
+  ![examplessrf](images/examplessrf.png)  
 3. So **https://certifiedvibehacker.com** \+ **/proxy?** \+ **url=file://** \+ **/app/data/ssrf\_flag.txt** and in the following image you can see I got the contents of the ssrf\_flag.txt file  
-   ![][image3]
+ ![ssrfAttack](images/ssrfAttack.png)
 
 Let’s break down the URL, 
 

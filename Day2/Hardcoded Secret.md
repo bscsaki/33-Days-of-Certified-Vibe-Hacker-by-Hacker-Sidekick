@@ -1,4 +1,4 @@
-### **Day 2: Log Analysis 3**
+### **Day 2: Hardcoded Secret**
 
 **Challenge:** Hardcoded secrets and flags exposed in HTML source code comments
 
