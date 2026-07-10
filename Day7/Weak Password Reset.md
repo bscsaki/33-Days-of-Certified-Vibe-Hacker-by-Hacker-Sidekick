@@ -6,15 +6,17 @@
 
 1. Go to /reset-password and plug in any of the email addresses retrieved so far, I used the admin’s as you can see in the image below.
 
-IMAGE
+
+![reset](images/reset.png)
 
 2. Click “send reset link” and you will be taken to the dashboard still logged into your account or to the main page if logged out, and you will be able to see the base64-encoded email address token, image below.
 
-IMAGE
+![weak password](images/weak_password.png)
 
 3. And if you decode it you can see it really is the user’s email address base64-encoded
 
-IMAGE
+
+![b64decode](images/b64decode.png)
 
 ### **The why:**
 
