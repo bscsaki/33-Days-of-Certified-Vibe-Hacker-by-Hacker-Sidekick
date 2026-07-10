@@ -11,7 +11,7 @@
 
 2. Click “send reset link” and you will be taken to the dashboard still logged into your account or to the main page if logged out, and you will be able to see the base64-encoded email address token, image below.
 
-![weak password](images/weak_password.png)
+![weakpassword](images/weakpassword.png)
 
 3. And if you decode it you can see it really is the user’s email address base64-encoded
 
