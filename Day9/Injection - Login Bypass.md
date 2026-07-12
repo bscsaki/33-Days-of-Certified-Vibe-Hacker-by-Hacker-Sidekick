@@ -1,4 +1,4 @@
-### **Day 4: SQL Injection \- Login Bypass**
+### **Day 9: SQL Injection \- Login Bypass**
 
 **Challenge:** SQL injection vulnerability allows authentication bypass through direct string concatenation in SQL queries. The flag is stored in the flag\_user account's email address   
 .
@@ -8,14 +8,14 @@
 1. I went to the login page. The first thing I tried was plugging a single quote **‘** into the username field, and I got the error you can see in the image below. Inserting a lone quote character is an old trick to test if user input is handled properly. As you can see I got an error message which tells me that I can try to further exploit this input field.  
    Whatever you input gets wrapped in quotes by the by the backend before reaching the database, and so by adding an extra quote **‘** you create an unmatched quote that triggers the syntax error.
 
-![][image1]
+![error](images/error.png)
 
 2. The next step is to craft the payload pluginside the login. We know that the username is flag\_user, and after completing the HTB SQL Injection Fundamentals module I understood how to structure this kind of attack. So the back end looks something similar to this:   
-   ![][image2]  
+![msg](images/msg.png)  
      
    We want to inject into the username field something that will bypass the authentication. Start with **flag\_user**, followed by a single quote **‘**  to close that block (since we start off inside {username}). Then comes the **AND** and to prevent that from ever executing we comment out the end of the payload **\--**. So the final payload is,  
    **flag\_user’ \--**   
-   **Image showing being logged in**  
+   ![user_flag](images/user_flag.png)
 3. Now I could not find the flag inside the flag\_user’s dashboard or locate the email address, but I logged in as the Admin and located the flag on the admin’s dashboard instead. On [Day 4](https://medium.com/@bscsaki/day-4-broken-access-control-admin-panel-8bb0dd08d606) I show you how to login in as the Admin.
 
 **The why**
