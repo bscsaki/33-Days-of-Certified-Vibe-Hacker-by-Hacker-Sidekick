@@ -16,7 +16,7 @@
    We want to inject into the username field something that will bypass the authentication. Start with **flag\_user**, followed by a single quote **‘**  to close that block (since we start off inside {username}). Then comes the **AND** and to prevent that from ever executing we comment out the end of the payload **\--**. So the final payload is,  
    **flag\_user’ \--**   
    ![user_flag](images/user_flag.png)
-3. Now I could not find the flag inside the flag\_user’s dashboard or locate the email address, but I logged in as the Admin and located the flag on the admin’s dashboard instead. On [Day 4](https://medium.com/@bscsaki/day-4-broken-access-control-admin-panel-8bb0dd08d606) I show you how to login in as the Admin.
+3. Now I could not find the flag inside the flag\_user’s dashboard or locate the email address, but I logged in as the Admin and located the flag on the admin’s dashboard instead. On [Day 4]([https://medium.com/@bscsaki/day-4-broken-access-control-admin-panel-8bb0dd08d606](https://github.com/bscsaki/33-Days-of-Certified-Vibe-Hacker-by-Hacker-Sidekick/blob/main/Day4/Broken%20Access%20Control%20-%20Admin%20Panel.md) I show you how to login in as the Admin.
 
 **The why**
 
