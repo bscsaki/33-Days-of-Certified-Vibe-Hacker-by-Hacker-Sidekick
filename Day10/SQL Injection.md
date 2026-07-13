@@ -13,11 +13,11 @@ While the 2nd query is safer since it uses ?1 as a parameter and probably sends 
 So this is happening for a few reasons, the **\#{xyz}** encasing is the correct syntax used for **SpEL** (**Sp**ring **E**xpression **L**anguage) but when the query string is put together and parsed things go wrong so let’s break it down.
 
 1. Compilation  
-   The java compiler **javac** will evaluate the constant expression   
+- The java compiler **javac** will evaluate the constant expression   
    **"SELECT \* FROM users WHERE username \= '" \+ "\#{username}" \+ "'"**   
-   Since it sees the **\+** symbol it will follow the language specification and concatenate the parts together to look like this  
-   **SELECT \* FROM users WHERE username \= '\#{username}'**  
-   This new string will be written into the .class file and even though it looks like it would work since it does not separate the 3 pieces that were combined this is interpreted as a big string. Thus there is no username reference for the variable.  
+- Since it sees the **\+** symbol it will follow the language specification and concatenate the parts together to look like this  
+   **SELECT \* FROM users WHERE username \= '\#{username}'**
+  - This new string will be written into the .class file and even though it looks like it would work since it does not separate the 3 pieces that were combined this is interpreted as a big string. Thus there is no username reference for the variable.  
 2. Spring Boot  
 - The Spring Data JPA (explanation below) will scan the classpath for interfaces related to JpaRepository.  
 - Once it finds the UserRepository it will search and read the @query via reflection and will see the concatenated string.  
@@ -28,6 +28,7 @@ So this is happening for a few reasons, the **\#{xyz}** encasing is the correct 
 5. When this query would run in SQL the code would read the string as a string literal and try to find usernames like \#{username} in the database and return 0 rows.
 
 So this is not really a SQLi attack since whatever the user input ends up being never reaches the Database.
+
 
 Some questions I encountered when solving this challenge were,
 
@@ -50,11 +51,12 @@ Today I actually asked Hacker Sidekick to suggest measures to harden and fix thi
    This is the only safe pattern for native queries:  
   ![securequery](images/securequery.png)
 
+
 **\#\# Summary:**  
 In this challenge of [Certified Vibe Hacker Workshop](https://certifiedvibehacker.com/) by [Hacker Sidekick](https://hackersidekick.com/) we saw an example of an insecure native query method that used improper SQL construction. Since the placeholder \#{username} never binded to the user’s input by the time the code reaches the database no username would be found to look for.
 
-**\#\# Bibliography:**
 
+**\#\# Bibliography:**
 [**Spring Boot**](https://spring.io/projects/spring-boot)   
 [**Spring Data JPA**](https://spring.io/projects/spring-data-jpa)   
 [**Spring Data JPA Custom Queries using @Query Annotation**](https://attacomsian.com/blog/spring-data-jpa-query-annotation)   
