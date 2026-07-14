@@ -4,9 +4,9 @@
 
 **\#\# Methodology:**  
 So we have to find the parameter in the login method that lets a user redirect to an external site. So open AuthController.java and look for the POST method, here is a snippet  
-![][image1]  
+![loginMethod.png][images/loginMethod.png]  
 There are several vulnerabilities but for today’s flag and challenge we care about the controller that accepts a parameter called redirect like an optional request parameter at line 57\.  
-![][image2]  
+![redirect.png][images/redirect.png]  
 So this if statement checks to see if the redirect is null and empty and if it is not it returns the user to the redirected link. So it does not check the contents of the redirect string, it does not check if this path is allowed, the host or the URL scheme. Thus the user could POST the redirect parameter which will get concatenated to the rest of the path and be sent back to the user.  
 This is what that could look like:
 
@@ -44,7 +44,7 @@ I also asked Hacker Sidekick to harden the redirect and it did so by creating a 
 - The login() method now gates the redirect
 
 And here is the implementation of those changes,  
-![][image3]
+![fix.png][images/fix.png]
 
 **\#\# Summary:**  
 In this challenge of [Certified Vibe Hacker Workshop](https://certifiedvibehacker.com/) by [Hacker Sidekick](https://hackersidekick.com/) we saw an open redirect vulnerability in a Spring based file server login flow where the user is able to login and be redirected to an entirely different website.
