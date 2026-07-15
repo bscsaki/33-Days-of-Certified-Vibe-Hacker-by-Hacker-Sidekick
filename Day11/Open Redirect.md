@@ -25,7 +25,7 @@ This weakness is known as CWE 601 URL Redirection to Untrusted Site. This vulner
 At the beginning I assumed this attack was the same as a reflected XSS, but turns out there is no script injection for open redirect. So in XSS the attackers code would get executed inside the victims browser, while here the attackers redirect does not execute or do anything it is used as the next destination 
 
 **\#\# Prevention:**  
-OWASP makes the following suggestions to control/minimize/prevent this type of vulnerability,
+OWASP makes the following suggestions to control and prevent this type of vulnerability,
 
 - Don’t use redirect and forwards in your code  
 - If you do use either one, do not accept user input as the destination  
