@@ -6,6 +6,7 @@
 Today’s challenge is part of the Static Code Analysis so after downloading the code files, and opening AuthService.java I started looking for the function that best matches the challenge’s description.  
 Only one function uses Math.random and so here is that function and the flag for today’s challenge.
 
+![mathRandom](images/mathRandom.png)
 Looking at this function we can see that the **session ID** is built by taking the **System.currentTimeMillis()** and adding a **Math.random()** value to it.
 
 A real world example of what weak randomness can lead to was an exploit discovered in Firefox for Android known as CVE 2014 1516\. Researchers discovered that the app stored the user’s profile in a directory that was supposed to have an unpredictable name. Because the algorithm was not random enough the researchers were able to brute force the directory name and gain access to sensitive user information
@@ -23,6 +24,7 @@ The prevention is simple enough, don’t use Math.Random. Anywhere that being pr
 The better alternative PRNG is **CSPRNG**, **a cryptographically** secure algorithm. It built so that even if its output was exposed an attacker could not easily predict the next value or generate a past one. In Java this algorithm maps to **java.security.SecureRandom()** if you are working with JavaScript the equivalent is **crypto.getRandomValues()**.
 
 I also asked Hacker Sidekick how it would secure the function better and it suggested to use a high entropy ID such as **UUID.randomUUID()**
+![fixhsk](images/fixhsk.png)
 
 **\#\# Summary:**  
 In this challenge of [Certified Vibe Hacker Workshop](https://certifiedvibehacker.com/) by [Hacker Sidekick](https://hackersidekick.com/) we saw how a session ID generator that works and seems harmless can be a bad choice.
