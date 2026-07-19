@@ -2,7 +2,7 @@
 
 **\#\# Challenge:** Path traversal vulnerability allows access to arbitrary files outside the intended directory through improper path validation, the location is  the /download endpoint.
 
-Today’s challenge belongs to the Web Application Pen Testing category, and we get to exploit the [Certified Vibe Hacker](https://certifiedvibehacker.com/) page. There is another challenge about path traversal that explores the back end side of this attack check that out [Day 12](https://bscsaki.medium.com/day-11-path-traversal-76052418230c?postPublishedType=repub).
+Today’s challenge belongs to the Web Application Pen Testing category, and we get to exploit the [Certified Vibe Hacker](https://certifiedvibehacker.com/) page. There is another challenge about path traversal that explores the back end side of this attack check that out [Day 12](https://github.com/bscsaki/33-Days-of-Certified-Vibe-Hacker-by-Hacker-Sidekick/blob/main/Day12/Path%20Traversal.md).
 
 
 **\#\# Methodology:**
@@ -15,7 +15,7 @@ This button link is also helpful since it shows the right request pattern for th
 
 4. Then I decided to find what kind of file structure I can expect; I checked out other challenges and XML External Entity (XXE) Injection (Have not solved yet) had a hint showing the location of that flag **/app/data/xxe\_flag.txt**.   
 5. This hint prompted me to try out the new path ending in **xxe\_flag.txt** which again sent me to **/upload**   
-6. Then I started trying out this same path and replaced **app** and **data** with **../** interchangeably and finally **../data/flag.txt** worked\! I was actually able to get the flag for both challenges (today’s and xxe) and the **Server-Side Request Forgery (SSRF)** which was solved on Day 
+6. Then I started trying out this same path and replaced **app** and **data** with **../** interchangeably and finally **../data/flag.txt** worked\! I was actually able to get the flag for both challenges (today’s and xxe) and the **Server-Side Request Forgery (SSRF)** which was solved on [Day 5](https://github.com/bscsaki/33-Days-of-Certified-Vibe-Hacker-by-Hacker-Sidekick/blob/main/Day5/Server-Side%20Request%20Forgery%20(SSRF).md) 
 
 Here are the pictures,
 ![pathtrv](images/pathtrv.png)
@@ -25,7 +25,7 @@ Here are the pictures,
 
 **\#\# The why:**
 
-Path traversal is classified as CWE 22 Improper Limitation of a Pathname to a Restricted Directory. We explored the backend side of this attack on [Day 12](https://bscsaki.medium.com/day-11-path-traversal-76052418230c?postPublishedType=repub) where we got to see how the code improperly handles the input. The problem is that my input today **/download?file=../data/flag.txt** was not checked or filtered against what or where the user input is supposed to go. So the code trusts the user’s input string and uses that to construct a reference to any location the OS can get to, including different locations than the current directory  or other directories where the user is supposed to be and have access to.
+Path traversal is classified as CWE 22 Improper Limitation of a Pathname to a Restricted Directory. We explored the backend side of this attack on [Day 12](https://github.com/bscsaki/33-Days-of-Certified-Vibe-Hacker-by-Hacker-Sidekick/blob/main/Day12/Path%20Traversal.md) where we got to see how the code improperly handles the input. The problem is that my input today **/download?file=../data/flag.txt** was not checked or filtered against what or where the user input is supposed to go. So the code trusts the user’s input string and uses that to construct a reference to any location the OS can get to, including different locations than the current directory  or other directories where the user is supposed to be and have access to.
 
 
 **\#\# Prevention:**  
