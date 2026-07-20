@@ -1,4 +1,5 @@
-### **Day 3: Log Analysis 5**
+### **Day 3: Log Analysis 5 - Hacker Sidekick Certified Vibe Hacker CTF Walkthrough 
+**
 
 **Challenge:** Analyze 5.json and identify the name of the user (first name or username only) who is performing the suspicious activity. 
 
