@@ -32,11 +32,7 @@ So let’s break this payload down
 
 ![405notallowed](images/405notallowed.png)
 
-2. If step 1 was successful we would move on to sending a basic XML payload via the command line curl and POST. That would look like (image of this: curl \-s \-X POST https://certifiedvibehacker.com/xml \\)
-
-3. 
-
-![xxebypathtraversal](images/xxebypathtraversal.png)
+2. If step 1 was successful we would move on to sending a basic XML payload via the command line curl and POST. That would look like 
 
 **curl \-s \-X POST https://certifiedvibehacker.com/xml \\  
      \-H "Content-Type: application/xml" \\  
