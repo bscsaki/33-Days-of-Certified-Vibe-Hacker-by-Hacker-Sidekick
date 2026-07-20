@@ -1,4 +1,4 @@
-### **Day 11: Open Redirect - Hacker Sidekick Certified Vibe Hacker CTF Walkthrough **
+### **Day 11: Open Redirect - Hacker Sidekick Certified Vibe Hacker CTF Walkthrough**
 
 **Challenge:** The application redirects users to URLs provided in request parameters without validation, enabling phishing attacks. What is the exact parameter name in the AuthController login method that accepts a redirect URL without validation? Examine AuthController.java and locate the login POST method. 
 
