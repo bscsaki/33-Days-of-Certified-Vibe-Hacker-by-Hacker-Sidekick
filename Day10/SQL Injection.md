@@ -1,5 +1,4 @@
-### **\# Day 10: SQL Injection - Hacker Sidekick Certified Vibe Hacker CTF Walkthrough 
-**
+### **\# Day 10: SQL Injection - Hacker Sidekick Certified Vibe Hacker CTF Walkthrough**
 
 **Challenge:** The application constructs SQL queries using string concatenation with user input, allowing SQL injection attacks. What is the exact method name in UserRepository.java that uses unsafe SQL query construction with string concatenation?
 
