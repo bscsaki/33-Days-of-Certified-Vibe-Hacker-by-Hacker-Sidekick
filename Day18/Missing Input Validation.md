@@ -4,6 +4,7 @@
 
 **\#\# Methodology:**  
 We have solved previous challenges located in AuthService.java and so by now and by name you know this file handles user identity, authentication, authorisation, user registration. And we have almost analysed all the functions the file contains. One of the few left and the only method that was registering new users without password and email validation is the following one.
+![codeflag](images/codeflag.png)
 
 As you can see this method takes the user’s username, password and email as input. No validation takes place on any of the 3 parameters and the new user is registered in the database and saved. 
 
