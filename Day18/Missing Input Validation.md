@@ -26,11 +26,10 @@ Over the past 18 days the word input validation has been consistently one of the
 
 **Password** \- This input needs to be validated, then handled securely the moment it passes validation, before it ever touches the database. There is not a specific pattern of password and usually a mix of uppercase, lowercase, numbers, and symbols are required. The password needs a minimum length rather than a mix of character types, OWASP recommends at least 8 characters, and needs to be checked against a list of known breached passwords before it's accepted. The step after is to secure how the password is processed. Today's function uses the hash function from Day 11, which uses MD5, a hashing algorithm that is no longer considered cryptographically secure. Fixing this means replacing MD5 with a strong, slow hashing algorithm built for password storage, and once that's in place, a few additional controls strengthen the registration flow further. 
 
-I also asked Hacker Sidekick for help. I instructed Sidekick to harden this method and secure the user registration process and here are its suggestions to this weakness.
-
-Hardened user registration method:
+I also asked Hacker Sidekick for help. I instructed Sidekick to harden this method and secure the user registration process and here are its suggestions:
 
 public User registerUser(String username, String password, String email) {  
+
     **// \--- Defensive null checks \---**  
     if (username \== null || password \== null || email \== null) {  
         throw new IllegalArgumentException("All fields are required");  
@@ -80,6 +79,7 @@ public User registerUser(String username, String password, String email) {
     User user \= new User(u, hashPassword(password), e);  
     return userRepository.save(user);  
 }
+
 
 Additional Controls to Consider according to Hacker Sidekick,
 
