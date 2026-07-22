@@ -8,7 +8,7 @@ Today’s challenge belongs to the Log Analysis category and we are tasked with 
 1. Open the log, take a look of the file, it contains the following fields Event Type,Event Name,Request ID,User ID,Request Parameters,Alert,Event ID,Event DateTime,Alarm DateTime,Source IP,Request User Agent and Repeated Attempts. All self explanatory names and fields so my mind went to checking out the word name.  
 2. Did a ‘name’ search and saw the parameter **bucketName** inside the **Request Parameters**. I don’t need the bucket name, I am looking for the domain name, which should look like a website…  
 3. By looking further down the same row the domain name can be found under the **Host** parameter.
-![logflag](images/logflag)
+![logflag](images/logflag.png)
 
 4. All the records matched this bucket name **microsoft-devtest**. For the **Host** field there were only 3 domains: one plain global endpoint, a regional endpoint and a single regional endpoint containing a dash symbol. All three pointing to the same bucket and the plain global endpoint appeared more often and turned out to be the flag to today’s challenge.
 
