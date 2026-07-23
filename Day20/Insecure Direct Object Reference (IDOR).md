@@ -8,7 +8,7 @@ Today’s CTF challenge belongs to the Static Code Analysis category and after h
 I followed the guidance of the challenge description, opened   
 The file has 6 @GetMapping methods in total, a mix of view rendered pages, downloads, and JSON API endpoints,  As you can see in the following image this method meets both criteria, of the download endpoint and no fileId check. 
 
-![getflag](imgages/getflag.png)
+![getflag](images/getflag.png)
 
 Before breaking this down its worth mentioning that the **FileController.java** file is annotated with @RequestMapping(“/files”), meaning that all endpoints from the 6 @GetMappings would be appended to /files. @request mapping is a class and all its methods inherit its path.   
 The method gets the current user id from the cookie session and returns 401 if it comes back null, so an unauthenticated request is correctly rejected before anything else happens.   
