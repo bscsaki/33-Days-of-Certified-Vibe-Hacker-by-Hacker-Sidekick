@@ -10,6 +10,8 @@ Today’s challenge belongs to the Static Code Analysis category and we will bet
 **\#\# Methodology:**  
 Follow the prompt’s instructions and navigate to **AuthController.java**. I started by looking at the Login method. After a user is authenticated this controller builds a new cookie object and adds setters to it before adding it to the response. Take a look at the code snippet here.
 
+![cookieflag](images/cookieflag.png)
+
 Take a look at line 49 that is where the cookie construction begins and you can see each line until 54 where the setters are set to be appended to the cookie response. setHttpOnly is false along with other secure flags and so this is the flag for today’s challenge. The name of this cookie sits inside the parentheses of the Cookie constructor, as the first argument passed in right before the session ID. I'm leaving the actual value out of this writeup since that's the flag itself, but if you pull up your own copy of AuthController.java you'll find it in plain text on line 49\.  
 Let’s see what each setter does, lines 50-53.
 
