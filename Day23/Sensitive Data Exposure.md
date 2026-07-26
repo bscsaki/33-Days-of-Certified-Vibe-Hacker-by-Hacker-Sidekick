@@ -9,10 +9,10 @@ Today’s challenge lives in the same file as yesterday and is also part of the 
 **\#\# Methodology:**  
 Once I was inside the **AuthController.java** I filtered by user inside the file and sure enough, there it was, I located the flag inside one of the methods.
 
-**AuthController.java** contains 2 different login handlers. One is simply /login and authenticates the user, creates a session, sets a cookie and redirects the user to another path. This is the typical login page and we explored a session vulnerability there on Day 22 Insecure cookie validation
+**AuthController.java** contains 2 different login handlers. One is simply /login and authenticates the user, creates a session, sets a cookie and redirects the user to another path. This is the typical login page and we explored a session vulnerability there on [Day 22 Insecure cookie validation](https://bscsaki.medium.com/day-22-insecure-cookie-configuration-hacker-sidekick-certified-vibe-hacker-ctf-walkthrough-363b492a26b3)
 
 And the other login handler can be seen in the following image,   
-![][image1]  
+![endpointflag](images/endpointflag.png)
 This method is built using the REST API framework and is meant for programmatic clients like a script, a mobile app, a frontend, anything that would send an API request and attempt to login.  
 if one of those programmatic clients were to make a request to the end point (aka the flag for today’s challenge) and it was successful the code would build back a response map  
 And we can see that getting build from lines 112 \-124   
