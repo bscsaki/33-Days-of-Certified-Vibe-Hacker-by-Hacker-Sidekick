@@ -47,7 +47,6 @@ I also asked Hacker Sidekick how it would harden the method whose name is the fl
     **return userRepository.save(user);**  
 **}**
 
-<script src="https://gist.github.com/bscsaki/7ab6f1af28b636cc898301db55d3827a.js"></script>
 
 **\#\# Summary:**  
 In this challenge of [Certified Vibe Hacker Workshop](https://certifiedvibehacker.com/) by [Hacker Sidekick](https://hackersidekick.com/) we saw a mass assignment vulnerable method let a profile update also change the role straight to the database. Its name is today’s flag
