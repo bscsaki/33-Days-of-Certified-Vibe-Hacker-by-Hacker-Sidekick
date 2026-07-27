@@ -24,7 +24,7 @@ The OWASP Cheat Sheet Series makes the following suggestions to prevent this cla
 - Use a **request DTO** instead of the entity itself. A DTO for this endpoint would only declare email and fullName, with no role or active field present at all \- Just like yesterday the DTO acts as a filter between what the client sends and what the entity actually accepts. It only declares the fields allowed to change, so role and active never even exist as options on the incoming object, there is no field for an attacker to add to the payload. The method then reads only from the DTO and maps the fields to the stored user.  
 - In Spring specifically, an **allow-list** restricts which fields can be edited: 
 
-  binder.setAllowedFields("email", "fullName");
+ ` binder.setAllowedFields("email", "fullName");`
 
 - Spring also supports the reverse, a **block-list**, which names specific fields that must never be written from user input:
 
@@ -36,7 +36,7 @@ I also asked Hacker Sidekick how it would harden the method whose name is the fl
 - **Authorization check:** a user may update only themself; ADMIN may update anyone.  
 - **Field whitelist:** only copies email and fullName (trimmed) from the request body. role and active are never written from user input.
 
-**public User updatedMethodNameFlag(User userData, Long currentUserId) {**  
+`**public User updatedMethodNameFlag(User userData, Long currentUserId) {**  
     **if (currentUserId \== null) throw new SecurityException("Authentication required");**  
     **// ... load target user ...**  
     **if (\!currentUserId.equals(user.getId())) {**  
@@ -45,7 +45,7 @@ I also asked Hacker Sidekick how it would harden the method whose name is the fl
     **if (userData.getEmail() \!= null) user.setEmail(userData.getEmail().trim());**  
     **if (userData.getFullName() \!= null) user.setFullName(userData.getFullName().trim());**  
     **return userRepository.save(user);**  
-**}**
+**}**`
 
 
 **\#\# Summary:**  
