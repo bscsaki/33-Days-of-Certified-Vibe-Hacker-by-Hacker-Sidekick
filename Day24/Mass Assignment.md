@@ -36,7 +36,7 @@ I also asked Hacker Sidekick how it would harden the method whose name is the fl
 - **Authorization check:** a user may update only themself; ADMIN may update anyone.  
 - **Field whitelist:** only copies email and fullName (trimmed) from the request body. role and active are never written from user input.
 
-`**public User updatedMethodNameFlag(User userData, Long currentUserId) {**  
+**public User updatedMethodNameFlag(User userData, Long currentUserId) {**  
     **if (currentUserId \== null) throw new SecurityException("Authentication required");**  
     **// ... load target user ...**  
     **if (\!currentUserId.equals(user.getId())) {**  
@@ -45,7 +45,7 @@ I also asked Hacker Sidekick how it would harden the method whose name is the fl
     **if (userData.getEmail() \!= null) user.setEmail(userData.getEmail().trim());**  
     **if (userData.getFullName() \!= null) user.setFullName(userData.getFullName().trim());**  
     **return userRepository.save(user);**  
-**}**`
+**}**
 
 
 **\#\# Summary:**  
