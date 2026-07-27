@@ -6,6 +6,7 @@ In yesterday’s solution [Day 23: Sensitive Data Exposure](https://bscsaki.medi
 
 **\#\# Methodology:**  
 Navigate to **UserService.java** and look for the method that accepts user input and copies/overwrites it into the stored user’s information.
+![massassignment_flag](images/massassignment_flag.png)
 
 This method looks up the existing users by their id and then overwrites all of the user’s stored data with the incoming new **userData**, its parameter. From lines 76-81 you can see all the data that is being compiled from the four fields onto the existing record of the user; email, fullname, role, and the active bool flag.  
 This is what mass assignment is: mass assigning new values with no check and validation on that data. All incoming objects get written into the database.  
@@ -45,7 +46,8 @@ I also asked Hacker Sidekick how it would harden the method whose name is the fl
     **if (userData.getFullName() \!= null) user.setFullName(userData.getFullName().trim());**  
     **return userRepository.save(user);**  
 **}**
-https://gist.github.com/bscsaki/7ab6f1af28b636cc898301db55d3827a.js
+
+<script src="https://gist.github.com/bscsaki/7ab6f1af28b636cc898301db55d3827a.js"></script>
 
 **\#\# Summary:**  
 In this challenge of [Certified Vibe Hacker Workshop](https://certifiedvibehacker.com/) by [Hacker Sidekick](https://hackersidekick.com/) we saw a mass assignment vulnerable method let a profile update also change the role straight to the database. Its name is today’s flag
