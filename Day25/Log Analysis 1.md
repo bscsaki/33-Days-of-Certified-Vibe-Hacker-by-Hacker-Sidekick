@@ -11,6 +11,6 @@ This is a .json file that contains Sysmon, Windows Security and x,w event logs a
 
 Windows keeps a record of when an application accessed something, whether that's hardware or a protected resource. So instead of looking for the device itself, I decided to search for the request made to access it. Every request like that has to go through a manager component responsible for tracking app permissions, which Windows calls the **CapabilityAccessManager**. This manager checks the request by comparing it to a stored record of the permissions that the user set; This is kept under a ConsentStore. And so I decided to filter by consent and soon enough it came up\!
 
-!(devicetypeflag)[images/devicetypeflag.png]
+![devicetypeflag](images/devicetypeflag.png)
 
 The rest is coming soon…  
